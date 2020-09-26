@@ -6,8 +6,6 @@ public class GameData : MonoBehaviour
 {
     private List<GameObject> prefabs;
 
-
-
     void Start()
     {
         prefabs = new List<GameObject>();

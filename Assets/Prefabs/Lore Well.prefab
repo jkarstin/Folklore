@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4762462117904431434}
   - component: {fileID: 8195993945751684967}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: SOI
-  m_TagString: Untagged
+  m_TagString: SOI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42cc4590cc132c45aaca787ac793e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attractionStrength: 0
 --- !u!1001 &9054516134279943614
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,18 +5,15 @@ using UnityEngine;
 public class PlacementTool : MonoBehaviour
 {
     private const int IGNORE_RAYCAST_MASK = ~(1 << 2);
-
+    
     private bool placing;
     private Transform prefabTransform;
 
     public GameData gameData;
-
     public Camera cam;
     public float maxDistance = 35;
-
     //In game 'cursor' to show placement tool location when not placing something
     public GameObject pointer;
-
     //Prefabs established in Unity Editor
     public GameObject[] prefabs;
 
@@ -86,16 +83,28 @@ public class PlacementTool : MonoBehaviour
 
     private void placePrefab()
     {
+        if (!prefabTransform) return;
+        
         prefabTransform.parent = null;
         prefabTransform.gameObject.layer = LayerMask.NameToLayer("Default");
-        
+
+        Transform child;
         for (int c = 0; c < prefabTransform.childCount; c++)
         {
-            prefabTransform.GetChild(c).gameObject.layer = LayerMask.NameToLayer("Default");
+            child = prefabTransform.GetChild(c);
+
+            switch (child.tag)
+            {
+                case "SOI":
+                    child.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+                    break;
+                default:
+                    child.gameObject.layer = LayerMask.NameToLayer("Default");
+                    break;
+            }
         }
 
         gameData.addPrefab(prefabTransform.gameObject);
-
         setPlacing(false);
     }
 

@@ -18,11 +18,19 @@ public class Folk : MonoBehaviour
 
     public class Personality
     {
-        private float curiosity;
+        public float curiosity;
+        public float scrutiny;
+        public float resillience;
+        public float honesty;
+        public float extroversion;
         
         public Personality()
         {
-
+            curiosity    = Random.Range(0f, 10f);
+            scrutiny     = Random.Range(0f, 10f);
+            resillience  = Random.Range(0f, 10f);
+            honesty      = Random.Range(0f, 10f);
+            extroversion = Random.Range(0f, 10f);
         }
 
     }

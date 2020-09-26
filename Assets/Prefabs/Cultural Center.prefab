@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133e67de3c4e684398bf9903d735801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  folks: 0
+  rumorStrength: 0
+  rumorSpreadRate: 0.15
 --- !u!64 &6255056630482546369
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -71,7 +74,7 @@ GameObject:
   - component: {fileID: 881273049126790956}
   m_Layer: 2
   m_Name: SOI
-  m_TagString: Untagged
+  m_TagString: SOI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
