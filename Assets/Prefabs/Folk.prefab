@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c807befb2ff44409c5816e887f05e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  house: {fileID: 0}
+  moveSpeed: 5
+  gameData: {fileID: 0}
 --- !u!64 &3334798045669561116
 MeshCollider:
   m_ObjectHideFlags: 0

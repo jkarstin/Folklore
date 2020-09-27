@@ -8,6 +8,7 @@ public class Folk : MonoBehaviour
     private GameObject target;
     private Vector3 direction;
 
+    public GameObject house = null;
     public float moveSpeed = 5f;
     public GameData gameData = null;
     
