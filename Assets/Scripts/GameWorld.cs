@@ -17,14 +17,19 @@ public class GameWorld : MonoBehaviour
     void Start()
     {
         timeData = new int[] {0, 0, 0, 0, 0};
+
         sun.localEulerAngles = new Vector3(270f, 0f, 0f);
+
         s = 0f;
         paused = false;
     }
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space)) paused = !paused;
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            paused = !paused;
+        }
 
         if (!paused) s += Time.deltaTime * worldTimeSpeed;
 

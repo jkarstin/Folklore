@@ -48,7 +48,6 @@ public class PlacementTool : MonoBehaviour
                     Vector3.zero,
                     Quaternion.identity
                     );
-                gameData.registerPlacedBuilding(prefab);
                 prefab.name = name;
                 prefabTransform = prefab.transform;
                 prefabTransform.parent = transform;
@@ -89,9 +88,20 @@ public class PlacementTool : MonoBehaviour
         prefabTransform.parent = null;
         prefabTransform.gameObject.layer = LayerMask.NameToLayer("Default");
 
+        Transform child;
         for (int c = 0; c < prefabTransform.childCount; c++)
         {
-            prefabTransform.GetChild(c).gameObject.layer = LayerMask.NameToLayer("Default");
+            child = prefabTransform.GetChild(c);
+
+            switch (child.tag)
+            {
+                case "SOI":
+                    child.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+                    break;
+                default:
+                    child.gameObject.layer = LayerMask.NameToLayer("Default");
+                    break;
+            }
         }
 
         gameData.addPrefab(prefabTransform.gameObject);
