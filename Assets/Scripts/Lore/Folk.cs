@@ -15,21 +15,11 @@ public class Folk : MonoBehaviour
     void Start()
     {
         personality = new Personality();
-        target = null;
     }
 
     void Update()
     {
-        if (!target && gameData) target = gameData.getNearestBuilding(this, "GatheringPoint");
-
-        if (target)
-        {
-            direction = target.transform.position - transform.position;
-            direction.y = 0f;
-
-            if (direction.magnitude <= 3f) target = null;
-            else transform.position += direction.normalized * moveSpeed * Time.deltaTime;
-        }
+        
     }
 
     public class Personality
